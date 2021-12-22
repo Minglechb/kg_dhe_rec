@@ -350,7 +350,7 @@ import  pandas as pd
 #  把用户电影评分+时间戳转换为字典形式并保存问文件
 def User_rated_transTXT2dict():
 
-    user_ratedmovies_timestamps = pd.read_table("user_ratedmovies-timestamps.txt")
+    user_ratedmovies_timestamps = pd.read_table("data/user_ratedmovies-timestamps.txt")
 
     user_ratedmovies_timestamps = np.array(user_ratedmovies_timestamps)
     user_ratedmovies_timestamps=user_ratedmovies_timestamps.astype(np.float)
@@ -484,7 +484,7 @@ def select_movie_directir(movirID):
 # 电影类型
 #############################
 def movie_genre_transTXT2dict():
-    movie_genre = pd.read_table("/Users/mingle/Documents/myitem/code/hetrec2011-movielens-2k-v2/data/movieID genre.txt")
+    movie_genre = pd.read_table("data/movieID genre.txt")
     movie_genre = np.array(movie_genre)
     print(movie_genre)
 
@@ -510,7 +510,7 @@ def movie_genre_transTXT2dict():
         json.dump(movie_genre_dict,f)
 
 def genrens_list():
-    movie_genre = pd.read_table("/Users/mingle/Documents/myitem/code/hetrec2011-movielens-2k-v2/data/movie_genres.txt")
+    movie_genre = pd.read_table("data/movie_genres.txt")
     movie_genre = np.array(movie_genre)
     movie_genre_list=list(set(movie_genre[:,1]))
     # print(movie_genre_list,len(movie_genre_list))
@@ -536,7 +536,7 @@ def select_genre_directir(movirID):
 # 电影国家
 #############################
 def movie_countries_list():
-    movie_countries = pd.read_table("/Users/mingle/Documents/myitem/code/hetrec2011-movielens-2k-v2/data/movie_countries.txt")
+    movie_countries = pd.read_table("data/movie_countries.txt")
     movie_countries = np.array(movie_countries)
     print(movie_countries[:,1])
     countries=set(movie_countries[:,1])
@@ -546,7 +546,7 @@ def movie_countries_list():
 
 
 def movie_countries_transTXT2dict():
-    movie_countries = pd.read_table("/Users/mingle/Documents/myitem/code/hetrec2011-movielens-2k-v2/data/movie_countries.txt")
+    movie_countries = pd.read_table("data/movie_countries.txt")
     movie_countries = np.array(movie_countries)
 
 
@@ -582,7 +582,7 @@ def select_countries_directir(movirID):
 # 电影标签
 #############################
 def movie_tags_transTXT2dict():
-    movie_tags = pd.read_table("/Users/mingle/Documents/myitem/code/hetrec2011-movielens-2k-v2/data/tags.txt")
+    movie_tags = pd.read_table("data/tags.txt")
     movie_tags = np.array(movie_tags)
     # print(movie_countries)
 
@@ -611,7 +611,7 @@ def select_tags_directir(movirID):
 # 电影标签权重
 #############################
 def movie_tags_wight_transTXT2dict():
-    movie_tags = pd.read_table("/Users/mingle/Documents/myitem/code/hetrec2011-movielens-2k-v2/data/movie_tags.txt")
+    movie_tags = pd.read_table("data/movie_tags.txt")
     movie_tags = np.array(movie_tags)
     movie_tags=movie_tags.astype(np.str)
     # print(movie_tags)
@@ -657,7 +657,7 @@ def select_movie_tags_wight(userID):
 # 电影信息
 #############################
 def movie_dict():
-    movie = pd.read_table("/Users/mingle/Documents/myitem/code/hetrec2011-movielens-2k-v2/data/movies.txt")
+    movie = pd.read_table("data/movies.txt")
     movie = np.array(movie)
     print(movie)
     movie_dict={}
@@ -702,7 +702,7 @@ def select_movie(userID):
 
 
 def readactor():
-    movie_actors = pd.read_csv("/Users/mingle/Documents/myitem/code/hetrec2011-movielens-2k-v2/data/movie_actors.csv",header=None)
+    movie_actors = pd.read_csv("data/movie_actors.csv",header=None)
     # print(movie_actors)
     movie_actors = np.array(movie_actors)
     #
@@ -711,12 +711,12 @@ def readactor():
 
 
 def readmovie():
-    movie = pd.read_csv("/Users/mingle/Documents/myitem/code/hetrec2011-movielens-2k-v2/data/movies.csv")
+    movie = pd.read_csv("data/movies.csv")
     movie = np.array(movie)
     return movie
 
 def readdirector():
-    movie_directors=np.array(pd.read_csv("/Users/mingle/Documents/myitem/code/hetrec2011-movielens-2k-v2/data/movie_directors.csv",header=None))
+    movie_directors=np.array(pd.read_csv("data/movie_directors.csv",header=None))
     # print(movie_directors)
     # print(len(movie_directors))
     return movie_directors[:,1:3]

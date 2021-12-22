@@ -1,5 +1,5 @@
 from neomodel import config
-config.DATABASE_URL = 'bolt://neo4j:chb020218@127.0.0.1:7687'
+config.DATABASE_URL = 'bolt://neo4j:020218@127.0.0.1:7687'
 
 
 from neomodel import *
@@ -107,14 +107,14 @@ class MOVIEREL(StructuredNode):
 
 if __name__=="__main__":
 
-    # create_tag()
-    # create_countries()
-    # create_genres()
-    # create_actor()
-    # createdirect()
+    create_tag()
+    create_countries()
+    create_genres()
+    create_actor()
+    createdirect()
 
-    # allnode=TAG.nodes.all()
-    # print(len(allnode))
+    allnode=TAG.nodes.all()
+    print(len(allnode))
     # create_movie_connet()
     node=DIRECTORS.nodes.all()
     print(len(node))
